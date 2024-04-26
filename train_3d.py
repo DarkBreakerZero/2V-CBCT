@@ -34,7 +34,7 @@ def train(train_loader, model, criterion, optimizer, scheduler, writer, epoch):
         scoutImg = data["input"]
         scoutImg = scoutImg.cuda()
 
-        if epoch > 9: fullImg, scoutImg = MixUp_AUG().aug(fullImg, scoutImg)
+        if epoch > 4: fullImg, scoutImg = MixUp_AUG().aug(fullImg, scoutImg)
 
         predictImg = model(scoutImg)
 
